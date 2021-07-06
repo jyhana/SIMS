@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: JYHan
+ * @Date: 2021-07-06 14:36:03
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-06 16:09:01
+ */
 #include "SFn.h"
 #include "Student.h"
 #include <iostream>
@@ -7,21 +15,19 @@
 #include <sstream>
 SFn::SFn()
 {
-
 }
 SFn::~SFn()
 {
-
 }
 //功能实现：增删查改
 //1. 增加
-Student SFn:: addStu(std::map<int, Student>& m1, Student& stu)
+Student SFn::addStu(std::map<int, Student> &m1, Student &stu)
 {
 	m1.insert(std::make_pair(stu.getID(), stu));
 	return stu;
 }
 //2. 删除
-bool SFn::deleteStuById(std::map<int, Student>& m1, const int& id)
+bool SFn::deleteStuById(std::map<int, Student> &m1, const int &id)
 {
 	bool b = false;
 
@@ -30,12 +36,12 @@ bool SFn::deleteStuById(std::map<int, Student>& m1, const int& id)
 	if (iter != m1.end())
 	{
 		m1.erase(iter);
-		b = true;//删除成功
+		b = true; //删除成功
 	}
 	return b;
 }
 //3. 查找
-Student SFn::findStuById(const std::map<int, Student>& m1, const int& id)
+Student SFn::findStuById(const std::map<int, Student> &m1, const int &id)
 {
 	Student stu;
 
@@ -48,7 +54,7 @@ Student SFn::findStuById(const std::map<int, Student>& m1, const int& id)
 	return stu;
 }
 //4. 改动
-Student SFn::updateStu(std::map<int, Student>& m1, const Student& cstu)
+Student SFn::updateStu(std::map<int, Student> &m1, const Student &cstu)
 {
 	Student stu;
 	int id = cstu.getID();
@@ -64,15 +70,15 @@ Student SFn::updateStu(std::map<int, Student>& m1, const Student& cstu)
 	return stu;
 }
 //显示全部
-void SFn::showAll(const std::map<int, Student>& m1) const
+void SFn::showAll(const std::map<int, Student> &m1) const
 {
-	for (auto p : m1)//p??
+	for (auto p : m1) //p??
 	{
 		std::cout << p.second << std::endl;
 	}
 }
 //保存
-bool SFn::saveToFile(const std::map <int, Student>& m1, const std::string& pathName) const
+bool SFn::saveToFile(const std::map<int, Student> &m1, const std::string &pathName) const
 {
 	bool b = true;
 	std::fstream ofs(pathName, std::ios::out);
@@ -94,15 +100,15 @@ bool SFn::saveToFile(const std::map <int, Student>& m1, const std::string& pathN
 		std::cout << "文件打开失败！" << std::endl;
 		b = false;
 	}
-	
+
 	return b;
 }
 //读取
-bool SFn::readFromFile(std::map<int, Student>& m1, std::string path)
+bool SFn::readFromFile(std::map<int, Student> &m1, std::string path)
 {
 	bool b = true;
 	m1.clear();
-	std::fstream ifs(path,std::ios::in);
+	std::fstream ifs(path, std::ios::in);
 	if (ifs)
 	{
 		std::cout << "文件打开" << std::endl;

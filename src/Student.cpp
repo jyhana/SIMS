@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: JYHan
+ * @Date: 2021-07-06 14:36:03
+ * @LastEditors: 
+ * @LastEditTime: 2021-07-06 16:06:47
+ */
 #include <iostream>
 #include <string>
 
@@ -18,14 +26,14 @@ double Student::getScore() const { return score; }
 void Student::setScore(double val) { val = score; }
 
 //重载运算符
-std::ostream& operator<<(std::ostream& os, Student& stu)
+std::ostream &operator<<(std::ostream &os, Student &stu)
 {
 	//输出
 	os << stu.getID() << "	" << stu.getName() << "		" << stu.getScore();
 	return os;
 }
 
-std::istream& operator>>(std::istream& is, Student& stu)
+std::istream &operator>>(std::istream &is, Student &stu)
 {
 	//输入
 	is >> stu.id >> stu.name >> stu.score;

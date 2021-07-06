@@ -1,12 +1,18 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: JYHan
+ * @Date: 2021-07-06 14:36:03
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-07-06 16:09:14
+ */
 #include "MainView.h"
 
 MainView::MainView()
 {
-
 }
 MainView::~MainView()
 {
-
 }
 //欢迎界面
 void MainView::welcome()
@@ -34,10 +40,12 @@ void MainView::showMenu()
 	std::cout << "请选择操作：";
 }
 //view显示所有的学生
-void MainView::showAllStuAtView(const std::map<int, Student>& stu_m1)
+void MainView::showAllStuAtView(const std::map<int, Student> &stu_m1)
 {
 	system("cls");
-	std::cout << "学号		" << "姓名		" << "成绩		" << std::endl;
+	std::cout << "学号		"
+			  << "姓名		"
+			  << "成绩		" << std::endl;
 	SFn Stu;
 	Stu.showAll(stu_m1);
 
@@ -47,7 +55,7 @@ void MainView::showAllStuAtView(const std::map<int, Student>& stu_m1)
 	showMenu();
 }
 //view添加学生信息
-void MainView::addStuAtView(std::map<int, Student>& stu_m1)
+void MainView::addStuAtView(std::map<int, Student> &stu_m1)
 {
 	SFn SFnstu;
 	int id;
@@ -78,7 +86,7 @@ void MainView::addStuAtView(std::map<int, Student>& stu_m1)
 	showMenu();
 }
 //view查找学生信息
-void MainView::findStuAtView(const std::map<int, Student>& m1)
+void MainView::findStuAtView(const std::map<int, Student> &m1)
 {
 	system("cls");
 	std::cout << "请输入需要查找的学生的学号：" << std::endl;
@@ -103,7 +111,7 @@ void MainView::findStuAtView(const std::map<int, Student>& m1)
 	showMenu();
 }
 //view删除学生信息
-void MainView::deleteStuAtView(std::map<int, Student>& v1)
+void MainView::deleteStuAtView(std::map<int, Student> &v1)
 {
 	system("cls");
 	std::cout << "请输入需要删除学生的学号：" << std::endl;
@@ -124,7 +132,7 @@ void MainView::deleteStuAtView(std::map<int, Student>& v1)
 	}
 }
 //view更新学生信息
-void MainView::updateStuAtView(std::map<int, Student>& m1)
+void MainView::updateStuAtView(std::map<int, Student> &m1)
 {
 	system("cls");
 	std::cout << "请输入需要修改的学生的学号：" << std::endl;
@@ -161,7 +169,7 @@ void MainView::updateStuAtView(std::map<int, Student>& m1)
 	showMenu();
 }
 //把map保存进文件
-void MainView::saveToFileAtView(const std::map<int, Student>& m1, std::string pathName)
+void MainView::saveToFileAtView(const std::map<int, Student> &m1, std::string pathName)
 {
 	if (m1.begin() == m1.end())
 	{
@@ -189,7 +197,7 @@ void MainView::saveToFileAtView(const std::map<int, Student>& m1, std::string pa
 	showMenu();
 }
 //把文件中的东西导入到map
-void MainView::readFromAtView(std::map<int, Student>& m, std::string pathName)
+void MainView::readFromAtView(std::map<int, Student> &m, std::string pathName)
 {
 	system("cls");
 	SFn SFnstu;
