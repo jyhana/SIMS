@@ -1,0 +1,10 @@
+^D:\PROGRAM COMPILE\SAMPLES\SIMS\SIMS_CMAKE\BUILD\CMAKEFILES\782B7C116F5B54F96A07660DC5408E10\GENERATE.STAMP.RULE
+setlocal
+"D:\Program Files\cmake-3.20.2-windows-x86_64\bin\cmake.exe" "-SD:/Program Compile/Samples/SIMS/SIMS_CMake" "-BD:/Program Compile/Samples/SIMS/SIMS_CMake/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Program Compile/Samples/SIMS/SIMS_CMake/build/SIMS.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
